@@ -17,6 +17,11 @@ jobs:
     - name: Checkout Repository master branch
       uses: actions/checkout@master
 
+    - name: Install Pandoc
+      run: |
+      # install pandoc
+      curl -s -L https://github.com/jgm/pandoc/releases/download/2.17.1.1/pandoc-2.17.1.1-linux-amd64.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
+
     # from: https://github.com/actions/setup-node
     - name: Setup Node.js 12.x
       uses: actions/setup-node@master

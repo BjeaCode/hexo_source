@@ -9,9 +9,9 @@
 #！ @docs https://aurora.tridiamond.tech/guide/configuration.html
 #! ---------------------------------------------------------------
 site:
-  subtitle: Aurora's Blog
-  author: Aurora
-  nick: Auroral UI
+  subtitle: CodeBomb
+  author: CodeBomb
+  nick: Beijing Etown Academy
   description:
   link: '/'
   language: cn
@@ -30,6 +30,17 @@ site:
 #！ @docs https://aurora.tridiamond.tech/guide/authors.html
 #! ---------------------------------------------------------------
 authors:
+  Mr_Stranger_CW:
+    name: Mr_Stranger_CW
+    link: https://www.luogu.com.cn/user/455490
+    avatar: https://cdn.luogu.com.cn/upload/usericon/455490.png
+    description: '我是AK了IOI的lyl'
+    socials:
+      github: https://github.com/tridiamond
+      luogu:
+        icon: /icons/luogu.svg
+        link: https://www.luogu.com.cn/user/455490
+
   ##! example
   # TriDiamond:
   #   name: TriDiamond
@@ -54,7 +65,7 @@ menu:
 #! ---------------------------------------------------------------
 theme:
   dark_mode: true
-  profile_shape: diamond # support `circle`, `diamond`, `rounded`
+  profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
     color_1: '#24c6dc'
@@ -101,7 +112,7 @@ site_meta:
 
 # For local development only!
 gitalk:
-  enable: true
+  enable: false
   autoExpand: true
   clientID: ''
   clientSecret: ''
@@ -117,17 +128,17 @@ gitalk:
 # Valine comment plugin (recommended!)
 # see https://valine.js.org/quickstart.html
 valine:
-  enable: false
-  app_id:
-  app_key:
+  enable: true
+  app_id: 'BHreIXow4vzf0d7Bu0qDgfJ7-gzGzoHsz'
+  app_key: 'TejxC5mOIieEMbARqcIAd3F4'
   avatar: ''
   placeholder: Leave your thoughts behind~
   visitor: true
-  lang: en
+  lang: 'zh-CN'
   avatarForce: false
   meta: ['nick', 'mail']
   requiredFields: []
-  admin: 'TriDiamond'
+  admin: 'CodeBomb'
   recentComment: true
 
 # Enable Busuanzi statistic plugin
