@@ -36,10 +36,11 @@ authors:
     avatar: https://cdn.luogu.com.cn/upload/usericon/455490.png
     description: '我是AK了IOI的lyl'
     socials:
-      github: https://github.com/tridiamond
-      luogu:
-        icon: /icons/luogu.svg
-        link: https://www.luogu.com.cn/user/455490
+      github: https://github.com/Ranger0CW
+      customs:
+        luogu:
+          icon: /svg/luogu.svg
+          link: https://www.luogu.com.cn/user/455490
 
   ##! example
   # TriDiamond:
@@ -66,7 +67,7 @@ menu:
 theme:
   dark_mode: true
   profile_shape: circle # support `circle`, `diamond`, `rounded`
-  feature: true
+  feature: false
   gradient:
     color_1: '#24c6dc'
     color_2: '#5433ff'
@@ -77,7 +78,11 @@ theme:
 #! @docs https://aurora.tridiamond.tech/guide/social.html
 #! ---------------------------------------------------------------
 socials:
+  github: 'https://github.com/BjeaCode'
   customs:
+    luogu:
+      icon: /svg/luogu.svg
+      link: https://www.luogu.com.cn/user/619021
   ##! Example:
   ##! --- Using SVG
   # bilibili:
