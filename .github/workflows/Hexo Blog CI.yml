@@ -19,8 +19,10 @@ jobs:
 
     # install pandoc
     - name: Install Pandoc
-      uses: docker://pandoc/core:2.9
-      # curl -s -L https://github.com/jgm/pandoc/releases/download/2.17.1.1/pandoc-2.17.1.1-linux-amd64.tar.gz | tar xvzf - -C $RUNNER_TOOL_CACHE/
+      run: |
+        wget https://github.com/jgm/pandoc/releases/download/2.10.1/pandoc-2.10.1-1-amd64.deb
+        sudo dpkg -i pandoc-2.10.1-1-amd64.deb
+        npm install hexo-renderer-pandoc --save  # for mathjax
 
     # from: https://github.com/actions/setup-node
     - name: Setup Node.js 12.x
