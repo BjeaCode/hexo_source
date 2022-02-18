@@ -1,10 +1,12 @@
 ---
-title: 插头DP
-
-date: 2022-02-10
+title: 蒟蒻的插头DP基础入门初步
+date: 2022-01-03 12:02:16
+tags:
+  - DP
+categories: 学习笔记
+author: Mr_Stranger_CW
+mathjax: true
 ---
-
-作者：AK了IOI的Mr_Stranger_CW
 
 ### 一个基于状压$and$哈希的动态规划算法
 
@@ -28,7 +30,7 @@ date: 2022-02-10
 
 现在我们先讨论模板题，在下面这道模板题中我们只需要用到下插头和右插头。
 
-[$\color{#0E1D69}\text{P5056 【模板】插头DP}$](https://www.luogu.com.cn/problem/P5056)
+[P5056 【模板】插头DP](https://www.luogu.com.cn/problem/P5056)
 
 题意简述：给定一张$n\times m$的网格图，保证$n,m\le12$，其上有若干障碍物，问把所有空地铺上线且使得这些线称为闭合回路的方案数。
 
