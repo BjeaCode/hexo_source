@@ -4,7 +4,7 @@ date: 2021-11-10 13:19:08
 tags:
   - 贪心
 categories: 题解
-author: Mr_Stranger_CW
+author: Jocker_CW
 mathjax: true
 ---
 
@@ -34,7 +34,7 @@ mathjax: true
 #### ~~也可能是我人菜自带大常数吧~~
 
 于是我选择了另一种方法，理论上来说复杂度是没有很优的，整体多套了一个$log_2 n$上去。。。
- 
+
  不过他过了(doge
 
 #### 他就是二分前缀和加树状数组优化！！！
@@ -67,7 +67,7 @@ using namespace std;
 #define int long long
 int t;
 int n;
- 
+
 int tr[200030];//树状数组
 inline int lb(int x){
     return x&-x;
@@ -99,7 +99,7 @@ inline int trbin_b(int x){
     }
     return r;
 }
- 
+
 int cnt;
 signed main(){
     cin>>t;
@@ -116,7 +116,7 @@ signed main(){
         }
         cnt=0;//记录取走了几个，每次记得更新
         sort(a+1,a+n+1,cmp);//排序
-        
+
         for(int i=1;i<=n;i++){
             if(a[i].col==1){
                 int it=trbin_b(1);
@@ -125,7 +125,7 @@ signed main(){
                     up(it,-1);//把它取走
                 }
             }
-            
+
             else{
                 int it=trbin_b(a[i].val);
                 if(it<n+1){//判断是否越界
@@ -139,10 +139,10 @@ signed main(){
         }
         if(cnt!=n)printf("NO\n");//cnt判断，等于n就是取完了，反之则失败
         else printf("YES\n");
-        
-        
+
+
     }
-   
+
 return 0;}
 ```
 

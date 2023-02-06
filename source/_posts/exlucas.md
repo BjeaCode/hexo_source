@@ -4,7 +4,7 @@ date: 2021-12-04 20:51:36
 tags:
   - 数学
 categories: 学习笔记
-author: Mr_Stranger_CW
+author: Jocker_CW
 mathjax: true
 ---
 
@@ -19,7 +19,7 @@ mathjax: true
 
 要求模数是质数
 
-时间复杂度$O(plog_pn)$	
+时间复杂度$O(plog_pn)$
 
 ###### $exLucas:$
 
@@ -56,7 +56,7 @@ $exEuclid$扩展欧几里得定理
 现在我们得到了一个同余方程组
 
 $
-\begin{cases} 
+\begin{cases}
 x \equiv a_1 \pmod {p_1^{k_1}}\\
 x \equiv a_2 \pmod {p_2^{k_2}}\\
 x \equiv a_3 \pmod {p_3^{k_3}}\\
@@ -89,7 +89,7 @@ $a_i\equiv \frac{\frac{n!}{p_i^x}}{\frac{m!}{p_i^y}\frac{(n-m)!}{p_i^z}}\times p
 
 现在问题转变为：如何求$n! \bmod p_i^{k_i}$？
 
-现在我们举一个例子 ~~别问为啥，你行你给我整个公式出来~~ 
+现在我们举一个例子 ~~别问为啥，你行你给我整个公式出来~~
 
 当$n=22,p_i=3,k_i=2$时
 

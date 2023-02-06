@@ -4,7 +4,7 @@ date: 2022-01-24 22:00:44
 tags:
   - DP
 categories: 学习笔记
-author: Mr_Stranger_CW
+author: Jocker_CW
 mathjax: true
 ---
 
@@ -71,7 +71,7 @@ dp[i][j]=\min(dp[i][k-1]+dp[k][j]+w(k,j))
 $$
 其中的$w(a,b)$满足：
 $$
-\forall a \leq b<c \leq d 
+\forall a \leq b<c \leq d
 $$
 $$
 w(a,c)+w(b,d)\leq w(a,d)+w(b,c)
@@ -80,7 +80,7 @@ $$
 
 若$w(a,b)$满足：
 $$
-\forall a \leq b\leq c \leq d 
+\forall a \leq b\leq c \leq d
 $$
 $$
 w(b,c)\leq w(a,d)

@@ -4,7 +4,7 @@ date: 2021-12-16 21:56:08
 tags:
   - 数学
 categories: 学习笔记
-author: Mr_Stranger_CW
+author: Jocker_CW
 mathjax: true
 ---
 
@@ -14,7 +14,7 @@ mathjax: true
 
 ## 目录：
 
->   1. $Min\_25$筛 
+>   1. $Min\_25$筛
 
 >   2. $BSGS$和$exBSGS$
 
@@ -157,7 +157,7 @@ inlind o(){
         }
     }
     for(int i=1;i<=tot;i++)sum1c[i]=(sum1c[i-1]+p[i])%M,sum2c[i]=(sum2c[i-1]+p[i]*p[i]%M)%M;
-    
+
 }
 inlint calc1c(int x){
     x%=M;
@@ -188,17 +188,17 @@ signed main(){
     re(n);
     sqr=sqrt(n);
     o();
-  
+
     for(int l=1,r;l<=n;l=r+1){
         r=n/(n/l);
         val[++cnt]=n/l;
- 
+
         g1k[cnt]=calc1c(val[cnt])-1;
         g2k[cnt]=calc2c(val[cnt])-1;
         if(val[cnt]<=sqr)ids[val[cnt]]=cnt;
         else idb[n/val[cnt]]=cnt;
 	}
-    
+
     for(int i=1;i<=tot;i++)
         for(int j=1;j<=cnt&&p[i]*p[i]<=val[j];j++)
             g1k[j]=(g1k[j]-  p[i] * ((g1k[ gid(val[j]/p[i]) ]-sum1c[i-1])%M) %M+M)%M,
@@ -281,7 +281,7 @@ $a^x\equiv b_1\pmod {p_1}$
 
 现在我们直接使用普通版$BSGS$求解就行了。
 
-$LG$上的模板题 
+$LG$上的模板题
 #### [$\color{#3498DB}{\text {P3846 【模板】BSGS} }$](https://www.luogu.com.cn/problem/P3846)
 
 #### [$\color{#9D3DCF}{\text {P4195 【模板】扩展 BSGS/exBSGS} }$](https://www.luogu.com.cn/problem/P4195)
@@ -337,7 +337,7 @@ inlint BSGS(int a,int b,int p){
         if(ma.find(okt)!=ma.end())
             return (qx(i,sqp,p)-ma[okt]+p)%p;
     return -1;
-   
+
 }
 
 inlint inv(int a,int b){
@@ -349,23 +349,23 @@ inlint exBSGS(int a,int b,int p){
     if(p==1||b==1) return 0;
     if(a%p==b%p) return 1;
        if(a%p==0) return  -1;
-   
+
     int na=0;
     int oa=a,ob=b,op=p;
     int tot=1;
     while (gcd(a,p)-1){int d=gcd(a,p);
        /// cout<<b<<" "<<p<<endl;
-        
+
         na++;
         if(b%d!=0) return -1;
         b/=d;
         p/=d;
-        
+
         tot*=a/d;
         tot%=p;
         a%=p;
         if(tot==b) return na;
-        
+
     }
     b%=p;
     b*=inv(tot,p);
@@ -456,11 +456,11 @@ $\therefore
 \delta_m(a)|\delta_m(ab)\times \delta_m(b)
 $
 
-又$\because 
+又$\because
 \gcd(\delta_m(a),\delta(b))=1
 $
 
-$\therefore 
+$\therefore
 \delta_m(a)|\delta_m(ab)
 $
 
@@ -469,20 +469,20 @@ $
 \delta_m(b)|\delta_m(ab)
 $
 
-$\because 
+$\because
 \gcd(\delta_m(a),\delta(b))=1$
 
-$\therefore 
+$\therefore
 \delta_m(a)\times \delta_m(b)|\delta_m(ab)
 $
 
 又$\because (ab)^{\delta_m(a)\times \delta_m(b)}\equiv a^{\delta_m(a)\times \delta_m(b)}b^{\delta_m(a)\times \delta_m(b)}\equiv 1$
 
-$\therefore 
+$\therefore
 \delta_m(ab)|\delta_m(a)\times \delta_m(b)
 $
 
-$\therefore 
+$\therefore
 \delta_m(ab)=\delta_m(a)\times \delta_m(b)
 $
 

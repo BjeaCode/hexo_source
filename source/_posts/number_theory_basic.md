@@ -4,7 +4,7 @@ date: 2021-07-22 13:48:46
 tags:
   - 数学
 categories: 学习笔记
-author: Mr_Stranger_CW
+author: Jocker_CW
 mathjax: true
 ---
 
@@ -167,10 +167,10 @@ $\therefore gcd(a,b)=gcd(b,a \ \bmod  b)$
 ### 3-1. 欧拉函数，字符表示为$ \varphi$或者$\phi$ ~~咋读我也不知道，好像是phi~~
 #### 3-1.1.欧拉函数的整体介绍和公式证明
  $\phi (n)$表示在小于等$n$的正整数中，与$n$互质的数的个数
- 
+
  ！栗子！：$\phi (8) = 4 \ \ (1,3,5,7)$
  **特殊地 $\phi (p)=p-1$，其中$p$是质数(显然质数与任何不是他的倍数的数互质）**
- 
+
 
 ------------
 
@@ -271,7 +271,7 @@ void  LOP(int n){//lots of phi,缩写LOP
 ###### 欧拉定理：若$a,n$互质，则有$a^{\varphi(n)} \equiv 1 \ (mod\ n)$
  费马小定理：可以视为欧拉定理的特例 $a^{p-1} \equiv 1 (mod \ p)$其实就是因为$\varphi(p)=p-1,$本质上和欧拉定理没啥区别。
 ###### 那么我们开始证明这个 ~~阴间玩意~~ 著名定理
- 
+
  首先我们定义集合$S= \{x_1,x_2,x_3,\cdots,x_{\varphi(n)}\}$（对于$\forall \ x_i,gcd(x_i,a)=1$）
 
 然后再定义集合$T=\{ t_1=a \ast x_1 \ \bmod n,t_2=a \ast x_2 \ \bmod n,t_3 =a \ast x_2 \ \bmod n,\cdots , t_{\varphi (n)}=a\ast x_{\varphi(n)} \ \bmod  n\}$
@@ -312,7 +312,7 @@ void  LOP(int n){//lots of phi,缩写LOP
 
 咳咳，没错，因为$\gcd(a,b) = \gcd(b,a \ \bmod  b)$，所以说，我们可以把原不定方程$ax+by=d$转化成一个新方程$b\ast x_0+(a \ \bmod b)\ast y_0=d$，这样我们就可以通过递归迅速的缩小问题规模。
 ###### 那么问题来了，当我们缩小问题规模之后，很明显原问题被改变了，那么原来的答案怎么通过小规模问题的答案回推回去呢？
- 
+
  zjy学长曾曰：“先打表小规模答案，然后瞪眼找规律”
 
 
@@ -417,7 +417,7 @@ $\because a^{\varphi(p)} \equiv 1 \ (\mod p)$
 $\therefore a\ast a^{\varphi(p)-1}\equiv 1 \ (\mod p)$
 
 $\therefore a^{\varphi(p)-1}=inv(a)$
- 
+
 ###### 很明显，在此处我们使用了幂运算，而正常需要我们进行取模的都是一些极大质数（通常是$1e9+7$）
 这代表该数的欧拉函数值也将很大
 
@@ -489,18 +489,18 @@ $\therefore gcd(a,b)=1$
 
 ### 该式为:$inv(i)=(p-\lfloor\frac{p}{i} \rfloor)\ast inv(p \ \bmod  i)\ \bmod p$
  至于这个式子他为啥是对的嘞？
- 
+
  求证：
- 
+
  $i\ast inv(i)\ \bmod  p=1$
- 
+
  ~~非常的简单~~(证明来源于我蒜哥)：
- 
+
  $i\ast inv(i)\ \bmod  p$
- 
+
  $= i\ast (p-\lfloor \frac {p}{i}\rfloor)\ast inv(p\ \bmod i)\ \bmod p$
- 
- 
+
+
 $= i\ast(p-\frac{p-p\ \bmod i}{i})\ast inv(p\ \bmod i)\ \bmod p$
 
 $=i\ast p-(p-p\ \bmod i)\ast inv(p\ \bmod i)\ \bmod p$
@@ -564,7 +564,7 @@ $\frac{n!}{m!(n-m)!}\ \bmod p=(n!\ \bmod p\ast (inv(m!)
 我们要用它去模$p$
 
 设$q_n=\lfloor \frac{n}{p} \rfloor,q_m=\lfloor \frac{m}{p} \rfloor,r=n\ \bmod  p,t=m \ \bmod  p$
- 
+
 那么 $C_m^n \equiv C_{q_m}^{q_n} \ast C_t^r (\bmod \ p)$
 
 ##### 证明时刻！（来源于度娘）：
@@ -584,7 +584,7 @@ $\frac{n!}{m!(n-m)!}\ \bmod p=(n!\ \bmod p\ast (inv(m!)
 
 
 ##### 正式开始证明！！！！！
- 
+
 由二项式定理，我们有$(1+x)^p=\sum_{i=0}^{p}(C_p^i\ast x^i)$
 
 因为我们可知对于$\forall \ x<p$，有$p \  |\ C_p^x$
@@ -594,7 +594,7 @@ $\frac{n!}{m!(n-m)!}\ \bmod p=(n!\ \bmod p\ast (inv(m!)
 所以我们有$(1+x)^p\ \bmod p=1+x^p$
 
 设$q_n=\lfloor \frac{n}{p} \rfloor,q_m=\lfloor \frac{m}{p} \rfloor,r=n\ \bmod  p,t=m \ \bmod  p$
- 
+
  $\bmod \ p:$
 
 $(1+x)^m=(1+x)^{q_m\ast p+t}$
@@ -790,7 +790,7 @@ long long  exCRT(){
         long long  d=exgcd(m[i-1],m[i],x,y);
         if((a[i-1]-a[i])% d!=0) return -1;
         x*=(a[i-1]-a[i])/d;
-        
+
         nm=m[i]*m[i-1]/d;
         na=a[i-1]-x*m[i-1];
         a[i]=(na% nm+nm)%nm;
@@ -904,11 +904,11 @@ $\ \ $
 
 #### 提示：第四步：输出答案；
  $\ \ $
- 
+
  $\ \ $
- 
+
  $\ \ $
- 
+
 -----
 # -8.质数筛法——埃/欧
 
@@ -951,7 +951,7 @@ void epr(int n){
             }
         }
     }
-    
+
 }
 ```
 这里我们再讲个优化，在枚举$j$的时候可以发现，我们可以选择将上面代码中的$2\ast i$替换成$i\ast i$因为那些小于$i$的倍数枚举，都一定在$i$之前被遍历过。
@@ -994,7 +994,7 @@ void opr(int n){
                    if(i% prs[j]==0){
                        break;
                    }
-                   
+
            }
        }
 }
